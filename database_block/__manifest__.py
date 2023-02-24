@@ -6,7 +6,7 @@
     "summary": """This technical module allows blocking backend access and display the message""",
     "category": "Extra Tools",
     "images": [],
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "application": False,
     "author": "IT-Projects LLC, Eugene Molotov",
     "support": "help@itpp.dev",
@@ -14,9 +14,14 @@
     "license": "Other OSI approved licence",  # MIT
     "depends": ["web"],
     "external_dependencies": {"python": [], "bin": []},
-    "data": ["views/assets.xml"],
+    "data": [],
     "demo": [],
     "qweb": ["static/src/xml/apps.xml"],
+    "assets": {
+        "web.assets_backend": [
+            "database_block/static/src/js/main.js"
+        ],
+    },
     "post_load": None,
     "pre_init_hook": None,
     "post_init_hook": None,
