@@ -19,7 +19,8 @@
     "qweb": ["static/src/xml/apps.xml"],
     "assets": {
         "web.assets_backend": [
-            "database_block/static/src/js/main.js"
+            "database_block/static/src/js/main.js",
+            # "/database_block/static/src/css/main.css"
         ],
     },
     "post_load": None,
