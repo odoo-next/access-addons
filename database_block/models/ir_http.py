@@ -3,6 +3,9 @@
 
 from odoo import SUPERUSER_ID, models
 
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class IrHttp(models.AbstractModel):
 
@@ -10,6 +13,8 @@ class IrHttp(models.AbstractModel):
 
     def session_info(self):
         res = super(IrHttp, self).session_info()
+
+        _logger.info('estoy aca')
 
         res["database_block_show_message_in_apps_menu"] = bool(
             self.env["ir.module.module"]
@@ -19,5 +24,8 @@ class IrHttp(models.AbstractModel):
                 limit=1,
             )
         )
+
+        _logger.info('res: ')
+        _logger.info(res)
 
         return res

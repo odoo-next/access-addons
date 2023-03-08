@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- Copyright 2020 Eugene Molotov <https://it-projects.info/team/em230418>
-     License MIT (https://opensource.org/licenses/MIT). -->
-<template>
-    <t t-extend="AppsMenu">
-        <t t-jquery=".dropdown-menu" t-operation="prepend">
+<templates id="template" xml:space="preserve">
+    <!-- <t t-name="database_block.BlockMessage" t-inherit="web_responsive.AppsMenu" owl="1"> -->
+    <t t-inherit="web_responsive.AppsMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='dropdown-menu']" position="after">
             <div
                 class="alert alert-info database_block_message"
                 style="display: none"
@@ -16,6 +15,6 @@
                     Your database is blocked
                 </div>
             </div>
-        </t>
+        </xpath>
     </t>
-</template>
+</templates>

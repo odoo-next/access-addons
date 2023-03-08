@@ -12,16 +12,18 @@
     "support": "help@itpp.dev",
     "website": "https://twitter.com/OdooFree",
     "license": "Other OSI approved licence",  # MIT
-    "depends": ["web"],
+    "depends": ["web_responsive"],
     "external_dependencies": {"python": [], "bin": []},
     "data": [],
     "demo": [],
-    "qweb": ["static/src/xml/apps.xml"],
     "assets": {
         "web.assets_backend": [
             "database_block/static/src/js/main.js",
-            # "/database_block/static/src/css/main.css"
+            "database_block/static/src/css/main.css"
         ],
+        'web.assets_qweb': [
+            "database_block/static/src/xml/apps.xml",
+        ]
     },
     "post_load": None,
     "pre_init_hook": None,
