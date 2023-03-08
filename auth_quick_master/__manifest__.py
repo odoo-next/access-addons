@@ -4,17 +4,13 @@
     "name": """Quick Auth (Master)""",
     "summary": """Authentication provider for "Quick Authentication" module""",
     "category": "Extra Tools",
-    # "live_test_url": "http://apps.it-projects.info/shop/product/DEMO-URL?version=12.0",
     "images": ['images/quick_auth_mater.jpg'],
-    "version": "12.0.1.1.0",
+    "version": "1.1.0",
     "application": False,
-
     "author": "IT-Projects LLC, Ivan Yelizariev",
     "support": "apps@it-projects.info",
     "website": "https://it-projects.info/team/yelizariev",
     "license": "AGPL-3",
-    # "price": 9.00,
-    # "currency": "EUR",
 
     "depends": [
     ],
@@ -36,15 +32,4 @@
 
     "auto_install": False,
     "installable": True,
-
-    # "demo_title": "Quick Authentication (Master)",
-    # "demo_addons": [
-    # ],
-    # "demo_addons_hidden": [
-    # ],
-    # "demo_url": "DEMO-URL",
-    # "demo_summary": "Authentication provider for "Quick Authentication" module",
-    # "demo_images": [
-    #    "images/MAIN_IMAGE",
-    # ]
 }
