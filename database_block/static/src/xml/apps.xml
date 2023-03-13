@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
 <templates id="template" xml:space="preserve">
-    <!-- <t t-name="database_block.BlockMessage" t-inherit="web_responsive.AppsMenu" owl="1"> -->
-    <t t-inherit="web_responsive.AppsMenu" t-inherit-mode="extension" owl="1">
+    <! <t t-name="database_block.BlockMessage" t-inherit="web_responsive.AppsMenu" owl="1"> -->
+    <!-- <t t-inherit="web_responsive.AppsMenu" t-inherit-mode="extension" owl="1">
         <xpath expr="//div[@class='dropdown-menu']" position="after">
             <div
                 class="alert alert-info database_block_message"
@@ -12,9 +12,9 @@
                     class="block_ui database_block_message alert alert-danger"
                     onclick="$('a.full').trigger('click');"
                 >
-                    Your database is blocked
+                    Your database is blablasbla
                 </div>
             </div>
         </xpath>
     </t>
-</templates>
+</templates>  -->
