@@ -16,11 +16,9 @@
     "data": [],
     "demo": [],
     "qweb": ["static/src/xml/expiration_panel.xml"],
-    "assets":{
+    "assets": {
         "web.assets_backend": [
             "database_block/static/src/js/enterprise_service.js",
-            # "database_block/static/src/js/expiration_panel.js",
-            # "database_block/static/src/css/main.css"
         ],
         'web.assets_qweb': [
             "database_block/static/src/xml/expiration_panel.xml",
