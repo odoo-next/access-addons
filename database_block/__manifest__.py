@@ -7,22 +7,21 @@
     "category": "Extra Tools",
     "images": [],
     "version": "15.0.1.0.0",
-    "application": False,
     "author": "IT-Projects LLC, Eugene Molotov",
     "support": "help@itpp.dev",
     "website": "https://twitter.com/OdooFree",
     "license": "Other OSI approved licence",  # MIT
-    "depends": ["web_responsive"],
+    "depends": ["web_enterprise"],
     "external_dependencies": {"python": [], "bin": []},
     "data": [],
     "demo": [],
+    "qweb": ["static/src/xml/expiration_panel.xml"],
     "assets": {
         "web.assets_backend": [
-            "database_block/static/src/js/main.js",
-            "database_block/static/src/css/main.css"
+            "database_block/static/src/js/enterprise_service.js",
         ],
         'web.assets_qweb': [
-            "database_block/static/src/xml/apps.xml",
+            "database_block/static/src/xml/expiration_panel.xml",
         ]
     },
     "post_load": None,
@@ -31,4 +30,5 @@
     "uninstall_hook": None,
     "auto_install": False,
     "installable": True,
+    'application': True,
 }
