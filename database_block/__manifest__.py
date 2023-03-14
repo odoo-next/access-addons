@@ -15,10 +15,11 @@
     "external_dependencies": {"python": [], "bin": []},
     "data": [],
     "demo": [],
-    "qweb": ["static/src/xml/expiration_panel.xml"],
+    "qweb": ["src/xml/expiration_panel.xml"],
     "assets": {
         "web.assets_backend": [
             "database_block/static/src/js/enterprise_service.js",
+            "database_block/static/src/js/expiration_panel.js",
         ],
         'web.assets_qweb': [
             "database_block/static/src/xml/expiration_panel.xml",

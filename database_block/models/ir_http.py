@@ -2,7 +2,7 @@
 # License MIT (https://opensource.org/licenses/MIT).
 
 from odoo import SUPERUSER_ID, models
-from odoo.http import request
+# from odoo.http import request
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -17,7 +17,7 @@ class IrHttp(models.AbstractModel):
 
         # warn_enterprise = False
 
-        res = super(IrHttp, self).session_info()
+        # res = super(IrHttp, self).session_info()
 
         _logger.info('estoy aca')
 
