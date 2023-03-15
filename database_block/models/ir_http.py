@@ -21,15 +21,9 @@ class IrHttp(models.AbstractModel):
 
         _logger.info('estoy aca')
 
-        res["database_block_show_message_in_apps_menu"] = bool(
-            self.env["ir.module.module"]
-            .with_user(SUPERUSER_ID)
-            .search(
-                [("name", "=", "web_enterprise"), ("state", "=", "installed")],
-                limit=1,
-            )
-        )
-        res['database_block_message'] = "Micael es un capo!"
+        res['database_block_message'] = "Changeme"
+        res['database_block_display'] = False
+        res['database_block_alert_type'] = "success"
 
         _logger.info('res: ')
         _logger.info(res)
