@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-  <t t-inherit="web_enterprise.DatabaseExpirationPanel" t-inherit-mode="extension" owl="1">
-        <xpath expr="//span[@class='oe_instance_register']" position="replace">
-        <span t-if="state.message === 'register'" class="oe_instance_register">
-            <t t-if="state.diffDays &gt; 0">
-                <t t-if="blockMessage === 'demo'">Esta base de datos lalalsas.. <t t-esc="delay"/>. </t>
-                <t t-else="">Esta base de datos bla blabla.. <t t-esc="delay"/>. </t>
-            </t>
-            <t t-if="state.diffDays &lt; 1">Esta base de datos blallblaal. </t>
-        </span>
-    </xpath>
+    <t t-inherit="web_enterprise.DatabaseExpirationPanel" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[1]" position="replace">
+            <div t-if="true" role="alert" class="database_expiration_panel alert o-hidden-ios alert-danger">
+                <a href="#" class="oe_instance_hide_panel float-right alert-link" t-on-click.prevent="_onHide" aria-label="Dismiss">×</a>
+                <span class="oe_instance_register">
+                    <p t-esc="state.database_block_message"/>
+                        Mira!
+                </span>
+            </div>
+        </xpath>
     </t>
 </templates>
