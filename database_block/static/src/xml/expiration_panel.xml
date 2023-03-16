@@ -2,11 +2,11 @@
 <templates id="template" xml:space="preserve">
     <t t-inherit="web_enterprise.DatabaseExpirationPanel" t-inherit-mode="extension" owl="1">
         <xpath expr="//div[1]" position="replace">
-            <div t-if="true" role="alert" class="database_expiration_panel alert o-hidden-ios alert-danger">
-                <a href="#" class="oe_instance_hide_panel float-right alert-link" t-on-click.prevent="_onHide" aria-label="Dismiss">×</a>
+            <!-- <t t-log="state"></t> -->
+            <div t-if="state.database_block_display" role="alert" class="database_expiration_panel alert o-hidden-ios" t-attf-class="alert-{{state.database_block_alert_type}}">
+                <a href="#" class="oe_instance_hide_panel float-right alert-link" t-on-click.prevent="_onHide" aria-label="Dismiss">x</a>
                 <span class="oe_instance_register">
-                    <p t-esc="state.database_block_message"/>
-                        Mira!
+                    <t t-esc="state.database_block_message"/>
                 </span>
             </div>
         </xpath>

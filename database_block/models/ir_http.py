@@ -15,17 +15,9 @@ class IrHttp(models.AbstractModel):
     def session_info(self):
         res = super(IrHttp, self).session_info()
 
-        # warn_enterprise = False
-
-        # res = super(IrHttp, self).session_info()
-
-        _logger.info('estoy aca')
-
-        res['database_block_message'] = "Changeme"
-        res['database_block_display'] = False
-        res['database_block_alert_type'] = "success"
-
-        _logger.info('res: ')
-        _logger.info(res)
+        res['database_block_message'] = "Changeme one more time"
+        res['database_block_display'] = True
+        res['database_block_alert_type'] = "danger"
+        res['database_block_block_ui'] = False
 
         return res
