@@ -18,28 +18,9 @@ class IrHttp(models.AbstractModel):
         # ICP = request.env['ir.config_parameter'].sudo()
         # User = request.env['res.users']
 
-        # _logger.info('estoy aca')
-
-        # testear desde db_block
-        # res = super(IrHttp, self).session_info()
-
-        _logger.info('estoy aca')
-
-        res['database_block_message'] = "Changeme"
-        res['database_block_display'] = False
-        res['database_block_alert_type'] = "success"
-
-        res['database_block_message'] = "Mensaje a mostrar ..."
+        res['database_block_message'] = "Changeme one more time"
         res['database_block_display'] = True
         res['database_block_alert_type'] = "danger"
-        _logger.info('res: ')
-        _logger.info(res)
+        res['database_block_block_ui'] = False
 
         return res
-
-
-
-
-
-
-

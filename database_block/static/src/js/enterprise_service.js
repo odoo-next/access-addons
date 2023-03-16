@@ -19,6 +19,7 @@ export const enterpriseService = {
             database_block_message: session.database_block_message,
             database_block_display: session.database_block_display,
             database_block_alert_type: session.database_block_alert_type,
+            database_block_block_ui: session.database_block_block_ui,
 
             isMailInstalled: "notification_type" in session,
             warning: session.warning,
