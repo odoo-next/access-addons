@@ -53,37 +53,41 @@ class IrHttp(models.AbstractModel):
 
             if now > database_expiration_date:
                 res["database_block_message"] = "Your database is expired"
+                res["database_block_display"] = True
+                res["database_block_block_ui"] = True
             elif delta.days > database_expiration_warning_delay:
-                pass
+                res["database_block_display"] = False
+                res["database_block_block_ui"] = False
             elif delta.days > 1:
-                res[
-                    "database_block_message"
-                ] = "Your database will expire in {} days".format(
+                res["database_block_message"] = "Your database will expire in {} days".format(
                     delta.days,
                 )
-                res["database_block_is_warning"] = True
+                res["database_block_display"] = True
+                res["database_block_block_ui"] = False
             elif delta.days == 1:
                 res["database_block_message"] = "Your database will expire tomorrow"
-                res["database_block_is_warning"] = True
+                res["database_block_display"] = True
+                res["database_block_block_ui"] = False
             elif delta.days == 0:
                 res["database_block_message"] = "Your database will expire today"
-                res["database_block_is_warning"] = True
+                res["database_block_display"] = True
+                res["database_block_block_ui"] = False
 
-            if res.get("database_block_message"):
-                database_expiration_link = Config.get_param(
-                    "database_expiration_details_link", None
-                )
+            # if res.get("database_block_message"):
+            #     database_expiration_link = Config.get_param(
+            #         "database_expiration_details_link", None
+            #     )
 
-                if database_expiration_link:
-                    database_expiration_link_label = Config.get_param(
-                        "database_expiration_details_link_label", "Details"
-                    )
-                    res[
-                        "database_block_message"
-                    ] = DATABASE_BLOCK_MESSAGE_HTML_TEMPLATE.render(
-                        database_block_message=res["database_block_message"],
-                        database_expiration_link=database_expiration_link,
-                        database_expiration_link_label=database_expiration_link_label,
-                    )
+            #     if database_expiration_link:
+            #         database_expiration_link_label = Config.get_param(
+            #             "database_expiration_details_link_label", "Details"
+            #         )
+            #         res[
+            #             "database_block_message"
+            #         ] = DATABASE_BLOCK_MESSAGE_HTML_TEMPLATE.render(
+            #             database_block_message=res["database_block_message"],
+            #             database_expiration_link=database_expiration_link,
+            #             database_expiration_link_label=database_expiration_link_label,
+            #         )
 
         return res

@@ -18,9 +18,11 @@ class IrHttp(models.AbstractModel):
         # ICP = request.env['ir.config_parameter'].sudo()
         # User = request.env['res.users']
 
-        res['database_block_message'] = "Changeme one more time"
+        #verificas que la fecha este o no expirada
+
+        res['database_block_message'] = "Vieja tu base de datos ya esta vencida, comunicate con fulano!!!!"
         res['database_block_display'] = True
-        res['database_block_alert_type'] = "danger"
-        res['database_block_block_ui'] = False
+        res['database_block_alert_type'] = "danger"  # info | warning | danger | success
+        res['database_block_block_ui'] = True
 
         return res
