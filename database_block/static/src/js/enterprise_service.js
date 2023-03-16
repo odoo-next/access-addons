@@ -7,8 +7,8 @@ export const enterpriseService = {
     name: "enterprise",
     dependencies: [],
     start() {
-        console.log('session: ');
-        console.log(session);
+        console.log('enterprise service js ............. : ', session);
+        // console.log(session);
         return {
             expirationDate: session.expiration_date,
             expirationReason: session.expiration_reason,
@@ -16,7 +16,10 @@ export const enterpriseService = {
             // Settings). We use mail to do that, as it is a dependency of almost every addon. To
             // determine whether mail is installed or not, we check for the presence of the key
             // "notification_type" in session_info, as it is added in mail for internal users.
-            blockMessage: session.database_block_message,
+            database_block_message: session.database_block_message,
+            database_block_display: session.database_block_display,
+            database_block_alert_type: session.database_block_alert_type,
+
             isMailInstalled: "notification_type" in session,
             warning: session.warning,
         };
