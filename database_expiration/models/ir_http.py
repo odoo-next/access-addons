@@ -55,23 +55,28 @@ class IrHttp(models.AbstractModel):
                 res["database_block_message"] = "Your database is expired"
                 res["database_block_display"] = True
                 res["database_block_block_ui"] = True
+                res['database_block_alert_type'] = "danger"
             elif delta.days > database_expiration_warning_delay:
                 res["database_block_display"] = False
                 res["database_block_block_ui"] = False
+                res['database_block_alert_type'] = "warning"
             elif delta.days > 1:
                 res["database_block_message"] = "Your database will expire in {} days".format(
                     delta.days,
                 )
                 res["database_block_display"] = True
                 res["database_block_block_ui"] = False
+                res['database_block_alert_type'] = "warning"
             elif delta.days == 1:
                 res["database_block_message"] = "Your database will expire tomorrow"
                 res["database_block_display"] = True
                 res["database_block_block_ui"] = False
+                res['database_block_alert_type'] = "warning"
             elif delta.days == 0:
                 res["database_block_message"] = "Your database will expire today"
                 res["database_block_display"] = True
                 res["database_block_block_ui"] = False
+                res['database_block_alert_type'] = "danger"
 
             # if res.get("database_block_message"):
             #     database_expiration_link = Config.get_param(

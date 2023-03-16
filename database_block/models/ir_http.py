@@ -20,9 +20,9 @@ class IrHttp(models.AbstractModel):
 
         #verificas que la fecha este o no expirada
 
-        res['database_block_message'] = "Vieja tu base de datos ya esta vencida, comunicate con fulano!!!!"
-        res['database_block_display'] = True
-        res['database_block_alert_type'] = "danger"  # info | warning | danger | success
-        res['database_block_block_ui'] = True
+        res['database_block_message'] = " "
+        res['database_block_display'] = False
+        res['database_block_alert_type'] = " "  #info | warning | danger | success
+        res['database_block_block_ui'] = False
 
         return res
