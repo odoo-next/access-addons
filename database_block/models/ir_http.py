@@ -21,6 +21,13 @@ class IrHttp(models.AbstractModel):
         # _logger.info('estoy aca')
 
         # testear desde db_block
+        # res = super(IrHttp, self).session_info()
+
+        _logger.info('estoy aca')
+
+        res['database_block_message'] = "Changeme"
+        res['database_block_display'] = False
+        res['database_block_alert_type'] = "success"
 
         res['database_block_message'] = "Mensaje a mostrar ..."
         res['database_block_display'] = True
