@@ -6,12 +6,8 @@ import os
 from odoo import models
 from odoo.tools import human_size
 
-import logging
-_logger = logging.getLogger(__name__)
 
-
-
-# https://stackoverflow.com/a/1392549
+#  https://stackoverflow.com/a/1392549
 def get_directory_size(start_path):
     total_size = 0
     for dirpath, _dirnames, filenames in os.walk(start_path):
@@ -44,13 +40,9 @@ class IrHttp(models.AbstractModel):
 
         total_size = database_size + filestore_size
 
-        _logger.info('total_size: ')
-        _logger.info(total_size)
-        _logger.info('database_limit_size: ')
-        _logger.info(database_limit_size)
         if total_size > database_limit_size:
             res["database_block_display"] = True
-            res["database_block_block_ui"] = False
+            res["database_block_block_ui"] = True
             res['database_block_alert_type'] = "danger"
             res["database_block_message"] = "Database size exceed ({} / {})".format(
                 human_size(total_size),
@@ -64,9 +56,5 @@ class IrHttp(models.AbstractModel):
             res["database_block_display"] = True
             res["database_block_block_ui"] = False
             res['database_block_alert_type'] = "warning"
-            # res["database_block_is_warning"] = True
-
-        _logger.info('res: ')
-        _logger.info(res)
 
         return res

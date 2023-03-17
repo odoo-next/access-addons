@@ -26,12 +26,11 @@ class IrHttp(models.AbstractModel):
         now = datetime.now()
         Config = self.env["ir.config_parameter"].sudo()
         database_expiration_date = Config.get_param(
-            "database_expiration_date", None)
+            "database.expiration_date", None)
 
         # Note:
         # DO NOT USE database.expiration_date (with dot)
         # it will be overwritten here: https://github.com/odoo/odoo/blob/f9a559f5455a4b964de9a99ff05756302071e959/addons/mail/models/update.py#L114
-
         if database_expiration_date:
             database_expiration_date = datetime.strptime(
                 database_expiration_date, DEFAULT_SERVER_DATETIME_FORMAT
@@ -77,22 +76,5 @@ class IrHttp(models.AbstractModel):
                 res["database_block_display"] = True
                 res["database_block_block_ui"] = False
                 res['database_block_alert_type'] = "danger"
-
-            # if res.get("database_block_message"):
-            #     database_expiration_link = Config.get_param(
-            #         "database_expiration_details_link", None
-            #     )
-
-            #     if database_expiration_link:
-            #         database_expiration_link_label = Config.get_param(
-            #             "database_expiration_details_link_label", "Details"
-            #         )
-            #         res[
-            #             "database_block_message"
-            #         ] = DATABASE_BLOCK_MESSAGE_HTML_TEMPLATE.render(
-            #             database_block_message=res["database_block_message"],
-            #             database_expiration_link=database_expiration_link,
-            #             database_expiration_link_label=database_expiration_link_label,
-            #         )
 
         return res
