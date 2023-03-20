@@ -7,8 +7,8 @@ export const enterpriseService = {
     name: "enterprise",
     dependencies: [],
     start() {
-        console.log('session: ');
-        console.log(session);
+        console.log('enterprise service js ............. : ', session);
+        // console.log(session);
         return {
             expirationDate: session.expiration_date,
             expirationReason: session.expiration_reason,

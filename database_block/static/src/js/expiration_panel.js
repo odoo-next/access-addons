@@ -7,6 +7,7 @@ import { blockUI, unblockUI } from "web.framework";
 
 patch(ExpirationPanel.prototype, "setup mounted", {
     mounted() {
+        // super(...arguments);
         this._super(...arguments);
 
         this.state.database_block_message = this.enterprise.database_block_message;
