@@ -61,6 +61,7 @@ class AuthQuickMaster(http.Controller):
     @http.route("/auth_quick/check-token", type="http", auth="public")
     def check_token(self, token, test_cr=False):
         master_url = self.get_master_url()
+        _logger.info("-------------Master URL: %s", master_url)
         url = urllib.parse.urljoin(master_url, "/auth_quick_master/check-token")
         res = requests.post(
             url,
