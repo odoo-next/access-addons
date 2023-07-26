@@ -69,7 +69,7 @@ class AuthQuickMaster(http.Controller):
         )
         _logger.debug("Response from master odoo: %s", res.text)
         result = res.json().get("result")
-        if not result.get("success"):
+        if not result or not result.get("success"):
             return "Wrong token"
 
         build_login = result["data"]["build_login"]
