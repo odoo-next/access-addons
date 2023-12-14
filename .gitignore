@@ -1,1 +1,5 @@
 .vscode/sftp.json
+access_apps/__pycache__/__init__.cpython-310.pyc
+*.pyc
+*.pyc
+access_apps/__pycache__/hooks.cpython-310.pyc

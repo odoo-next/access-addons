@@ -1,15 +1,27 @@
-from odoo import SUPERUSER_ID, models
+
+from odoo import models
+from odoo.http import request
 
 
-class IrHttp(models.AbstractModel):
-    _inherit = "ir.http"
+class Http(models.AbstractModel):
+    _inherit = 'ir.http'
 
     def session_info(self):
-        res = super(IrHttp, self).session_info()
+        ICP = request.env['ir.config_parameter'].sudo()
+        User = request.env['res.users']
 
-        res['database_block_message'] = ""
-        res['database_block_display'] = False
-        res['database_block_alert_type'] = "info"  # info | warning | danger | success
-        res['database_block_block_ui'] = False
+        if User.has_group('base.group_system'):
+            warn_enterprise = 'admin'
+        elif User.has_group('base.group_user'):
+            warn_enterprise = 'user'
+        else:
+            warn_enterprise = False
 
-        return res
+        result = super(Http, self).session_info()
+        result['support_url'] = "https://www.odoonext.com/help"
+        if warn_enterprise:
+            result['warning'] = warn_enterprise
+            #obtener el database_expiration_date de los parametros
+            result['expiration_date'] = self.env['ir.config_parameter'].sudo().get_param('database.expiration_date')
+            result['expiration_reason'] = ICP.get_param('database.expiration_reason')
+        return result
