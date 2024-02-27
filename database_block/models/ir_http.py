@@ -21,7 +21,6 @@ class Http(models.AbstractModel):
         result['support_url'] = "https://www.odoonext.com/help"
         if warn_enterprise:
             result['warning'] = warn_enterprise
-            #obtener el database_expiration_date de los parametros
-            result['expiration_date'] = self.env['ir.config_parameter'].sudo().get_param('database_expiration_date')
+            result['expiration_date'] = '2430-10-10'
             result['expiration_reason'] = ICP.get_param('database.expiration_reason')
         return result
